@@ -17,5 +17,3 @@ The mini project is centered on:
 ---
 
 
-## Project Structure
-

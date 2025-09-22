@@ -4,12 +4,13 @@ const app = express();
 const port = 5000;
 
 const dbClient = new Client({
-  host: process.env.DB_HOST || 'localhost',
+  host: process.env.DB_HOST || 'db',  // must match docker-compose service name
   user: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASSWORD || 'postgres',
   database: process.env.DB_NAME || 'testdb',
   port: process.env.DB_PORT || 5432,
 });
+
 
 dbClient.connect()
   .then(() => console.log('Connected to Postgres'))

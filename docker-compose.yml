@@ -1,3 +1,4 @@
+
 version: '3.8'
 
 services:
@@ -8,7 +9,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: testdb
     volumes:
-      - ./db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
@@ -31,3 +32,6 @@ services:
       - "3000:3000"
     depends_on:
       - backend
+
+volumes:
+  db-data:
